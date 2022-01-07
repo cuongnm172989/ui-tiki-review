@@ -46,14 +46,23 @@
 
 <div class="container main">
   <mat-form-field class="example-full-width" appearance="fill">
-    <mat-label>Nhập vào một comment</mat-label>
-    <textarea matInput placeholder="Cuốn sách này quả thật rất hay"></textarea>
+    <mat-label>Write a comment</mat-label>
+    <textarea matInput placeholder="Cuốn sách này quả thật rất hay" [(ngModel)]="name" ></textarea>
   </mat-form-field>
+
   <div class="submit">
-    <button class="submit-but" mat-raised-button color="primary">Dự đoán</button>
+    <mat-form-field appearance="fill">
+      <mat-label>Choose Model</mat-label>
+      <mat-select>
+        <mat-option *ngFor="let food of foods" [value]="food.value">
+          {{food.viewValue}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <button style="margin-left: 15px;" class="submit-but" (click)="submit()" mat-raised-button color="primary">Dự đoán</button>
     <!-- <button mat-raised-button color="accent">Accent</button>
     <button mat-raised-button color="warn">Warn</button> -->
-    <button style="margin-left: 10px;" mat-raised-button disabled>Xóa</button>
+    <button style="margin-left: 15px;" (click)="cancel()" mat-raised-button >Xóa</button>
   </div>
   <div class="loading">
     

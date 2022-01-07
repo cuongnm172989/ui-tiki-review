@@ -9,6 +9,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {MatInputModule} from '@angular/material/input';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatButtonModule} from '@angular/material/button';
+import { FormsModule } from '@angular/forms';
+import {MatSelectModule} from '@angular/material/select';
 
 
 @NgModule({
@@ -23,6 +25,8 @@ import {MatButtonModule} from '@angular/material/button';
     NgbModule,
     MatInputModule,
     MatButtonModule,
+    FormsModule,
+    MatSelectModule,
     MatProgressSpinnerModule
   ],
   providers: [],

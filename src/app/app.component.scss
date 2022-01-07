@@ -291,7 +291,7 @@ svg#clouds {
     visibility: hidden;
   }
 }
-mat-form-field {
+.example-full-width {
   width: 100%;
 }
 .main {
@@ -312,4 +312,7 @@ mat-form-field {
   align-items: center;
   margin-bottom: 70px;
 
+}
+button{
+  font-size: 20px;
 }
