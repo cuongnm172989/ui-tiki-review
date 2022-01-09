@@ -12,19 +12,36 @@ export class PredictService {
 
   constructor(private httpClient: HttpClient) { }
 
+
+
   httpHeader = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json'
     })
   }
 
-  loadData() {
-    this.httpClient.get<any[]>(this.endPoint)
+  body = JSON.stringify({
+    "sentence": "Cuốn sách này như cẹc",
+    "model": "bilstm"
+});
+
+  loadDataTest(body: any) {
+    body = JSON.stringify(body)
+    console.log("body input: ", body)
+    this.httpClient.post<any[]>(this.endPoint, body)
       .subscribe(data => {
         console.log("data:",data);
       });
-    console.log("test service");
+    console.log("test service", typeof this.body);
   }
+
+  // loadData(body: string) {
+  //   this.httpClient.post<any[]>(this.endPoint, body)
+  //     .subscribe(data => {
+  //       console.log("data:",data);
+  //     });
+  //   console.log("test service");
+  // }
 
 
 }

@@ -54,8 +54,8 @@
     <mat-form-field appearance="fill">
       <mat-label>Choose Model</mat-label>
       <mat-select>
-        <mat-option *ngFor="let food of foods" [value]="food.value">
-          {{food.viewValue}}
+        <mat-option *ngFor="let food of foods" [value]="food.value" >
+          <button (click)="setValue(food.value)">{{food.viewValue}}</button>
         </mat-option>
       </mat-select>
     </mat-form-field>
@@ -64,15 +64,20 @@
     <button mat-raised-button color="warn">Warn</button> -->
     <button style="margin-left: 15px;" (click)="cancel()" mat-raised-button >Cancel</button>
   </div>
-  <div class="loading">
-    
+  <div class="loading" *ngIf="loadding">
+
     <p>
       <mat-spinner></mat-spinner>
     </p>
     <!-- <mat-spinner></mat-spinner> -->
   </div>
-  <div class="result">
-    <h3> Đây là một kết quả tốt</h3>
+  <div class="result" *ngIf="result != null">
+    <b class="ket-qua" >Kết quả: </b>
+    <h3 style="color: green" *ngIf="result.data.class == 'Tích cực'"> {{result.data.class}}</h3>
+    <h3 style="color: red" *ngIf="result.data.class == 'Tiêu cực'"> {{result.data.class}}</h3>
+    <h3 style="color: black" *ngIf="result.data.class == 'Trung lập'"> {{result.data.class}}</h3>
+
+    <h3> {{result.data.acc}}</h3>
   </div>
-  
+
 </div>
