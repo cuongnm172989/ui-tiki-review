@@ -11,6 +11,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatButtonModule} from '@angular/material/button';
 import { FormsModule } from '@angular/forms';
 import {MatSelectModule} from '@angular/material/select';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import {MatSelectModule} from '@angular/material/select';
     MatButtonModule,
     FormsModule,
     MatSelectModule,
+    HttpClientModule,
     MatProgressSpinnerModule
   ],
   providers: [],
