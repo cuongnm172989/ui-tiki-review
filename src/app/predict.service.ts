@@ -8,7 +8,7 @@ import { retry, catchError } from 'rxjs/operators';
 })
 export class PredictService {
 
-  endPoint = 'http://localhost:8001';
+  endPoint = 'http://0.0.0.0:8001/predict';
 
   constructor(private httpClient: HttpClient) { }
 
@@ -16,7 +16,15 @@ export class PredictService {
     headers: new HttpHeaders({
       'Content-Type': 'application/json'
     })
-  } 
+  }
 
-  
+  loadData() {
+    this.httpClient.get<any[]>(this.endPoint)
+      .subscribe(data => {
+        console.log("data:",data);
+      });
+    console.log("test service");
+  }
+
+
 }
